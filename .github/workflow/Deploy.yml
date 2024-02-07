@@ -1,0 +1,14 @@
+name: Deploy
+on: [workflow_dispatch, push]
+jobs:
+  Clean Compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Install Dependencies
+        run:  mvn clean compile
+      - name: Print Done
+        run: echo "Compilation Completed !!!!"
+
+
