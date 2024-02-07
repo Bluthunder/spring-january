@@ -1,7 +1,7 @@
 name: Deploy
 on: [workflow_dispatch, push]
 jobs:
-  Clean Compile:
+  Compile:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
