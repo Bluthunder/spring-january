@@ -11,12 +11,16 @@ jobs:
         with:
           java-version: 21
           distribution: 'corretto'
+          cache: maven
       - name: Install Dependencies
         run:  mvn clean compile
       - name: Print Done
         run: echo "Compilation Completed !!!!"
       - name: Build
         run: mvn package
+      - name: Print Event Data
+        run: echo "${{ toJSON(github.event) }}"
+
 
 
 
