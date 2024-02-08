@@ -15,5 +15,8 @@ jobs:
         run:  mvn clean compile
       - name: Print Done
         run: echo "Compilation Completed !!!!"
+      - name: Build
+        run: mvn package
+
 
 
