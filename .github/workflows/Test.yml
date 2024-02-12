@@ -34,6 +34,7 @@ jobs:
       - name: run test
         run: mvn test
   done:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Print
