@@ -39,7 +39,7 @@ jobs:
     steps:
       - name: Print
         run: | 
-            echo "This job was triggered by {{github.event_name}} event."
+            echo "This job was triggered by ${{github.event_name}} event."
             echo "🍏 This job's status is ${{ job.status }}."
 
 
