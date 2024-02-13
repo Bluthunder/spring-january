@@ -5,6 +5,14 @@ on:
       - opened
       - reopened
   workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'dev-*'    # any branch with name such as dev-new, dev-new-test
+      - 'feat/**'  # any feature branches such as feat/new, feat/new/pr
+    paths-ignore:
+      - 'github/workflows/*'  # workflow will not run for any files changes in workflow
+
 jobs:
   checkout:
     runs-on: ubuntu-latest
