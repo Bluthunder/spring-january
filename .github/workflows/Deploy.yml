@@ -21,7 +21,7 @@ jobs:
       - name: Print Done
         run: echo "Compilation Completed !!!!"
       - name: Build
-        run: mvn package
+        run: mvn clean install -DskipTests
       - name: Print Event Data
         run: echo "${{ toJSON(github.event) }}"
       - name: Upload Artifact
