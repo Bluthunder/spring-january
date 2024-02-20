@@ -9,9 +9,9 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: set up jdk 21
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           java-version: 21
           distribution: 'corretto'
@@ -25,10 +25,10 @@ jobs:
       - name: Print Event Data
         run: echo "${{ toJSON(github.event) }}"
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
             name: packaged-jar
-            path: target
+            path: target/*.jar
 
 
 
