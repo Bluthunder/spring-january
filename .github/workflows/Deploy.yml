@@ -29,6 +29,16 @@ jobs:
         with:
             name: packaged-jar
             path: target/*.jar
+    deploy:
+      needs: build
+      runs-on: ubuntu-latest
+      steps:
+        - name: Get Build Artifacts
+          uses: actions/download-artifact@v4
+          with:
+            name: packaged-jar
+        - name: Show Output
+          run: ls
 
 
 
