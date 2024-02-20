@@ -24,6 +24,12 @@ jobs:
         run: mvn package
       - name: Print Event Data
         run: echo "${{ toJSON(github.event) }}"
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          - name: packaged-jar
+            path: target
+
 
 
 
