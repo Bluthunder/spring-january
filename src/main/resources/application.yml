@@ -4,4 +4,12 @@ app:
     username: postgres
     password: password
     pool-size: 30
+  api:
+    title: Spring Boot Person Api
+    version: 1.0.0
+    description: Spring boot example project for person api
+    contact-name: bluthunder
+    contact-email: kaushiktd@gmail.com
+    swagger:
+      enable: true
 
