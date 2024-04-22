@@ -7,7 +7,8 @@ jobs:
 #      - name:
     build:
       runs-on: ubuntu-latest
-      script-file: ${{steps.publish.outputs.somevalue }}
+      outputs:
+        script-file: ${{steps.publish.outputs.somevalue }}
       steps:
       - name: Checkout Code
         uses: actions/checkout@v4
