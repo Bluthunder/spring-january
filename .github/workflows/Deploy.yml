@@ -7,6 +7,7 @@ jobs:
 #      - name:
     build:
       runs-on: ubuntu-latest
+      script-file: ${{steps.publish.outputs.somevalue }}
       steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -24,6 +25,9 @@ jobs:
         run: mvn clean install -DskipTests
       - name: Print Event Data
         run: echo "${{ toJSON(github.event) }}"
+      - name: Publish API Name
+        id: publish
+        run: find target/classes/com/example/springgha/api/*.class -type f -execdir echo 'somevalue={}'= >> $GITHUB_OUTPUT ';'
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -39,6 +43,8 @@ jobs:
             name: packaged-jar
         - name: Show Output
           run: ls
+        - name: Output filename
+          run: echo "{{ needs.builds.outputs.script-file }}"
 
 
 
